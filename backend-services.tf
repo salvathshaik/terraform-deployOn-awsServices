@@ -21,7 +21,7 @@ resource "aws_db_instance" "terraform-rds" {
   allocated_storage      = 20 #20 GB for this RDS service
   storage_type           = "gp2"
   engine                 = "mysql"
-  engine_version         = "5.6.34"
+  engine_version         = "5.7" #"5.6.34" updated to 5.7
   instance_class         = "db.t2.micro"
   db_name                = var.dbname #name is deprricated so using db_name
   username               = var.dbuser
@@ -40,7 +40,7 @@ resource "aws_elasticache_cluster" "terraform-elastic-cache" {
   engine               = "memcached"
   node_type            = "cache.t2.micro"
   num_cache_nodes      = 1
-  parameter_group_name = "default.memcached1.5" #you can find this in aws doc
+  parameter_group_name = "default.memcached1.4" #you can find this in aws doc, changed the version from 1.5 to 1.4
   port                 = 11211
   security_group_ids   = [aws_security_group.terraform-backend-sg.id] #the same we have given for RDS
   subnet_group_name    = aws_elasticache_subnet_group.terraform-ecache-subgrp.name

@@ -1,7 +1,7 @@
 resource "aws_elastic_beanstalk_environment" "terraform-bean-env-prod" {
   name                = "terraform-bean-env-prod"
   application         = aws_elastic_beanstalk_application.terraform-bean-app-prod.name #rectified
-  solution_stack_name = "64bit Amazon Linux v4.1.1 running Tomcat 8.5 Corretto 11"
+  solution_stack_name = "64bit Amazon Linux 2 v4.3.1 running Tomcat 8.5 Corretto 11"
   cname_prefix        = "terraform-bean-prod-domain" #check this again i have checked.
 
   setting {
