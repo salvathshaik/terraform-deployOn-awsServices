@@ -35,7 +35,7 @@ variable "rmqpass" {
   default = "terraforminstance@123" #make sure it is longer than 12 chars
 }
 
-variable dbuser {
+variable "dbuser" {
   default = "admin"
 }
 
