@@ -10,7 +10,7 @@ resource "aws_elastic_beanstalk_environment" "terraform-bean-env-prod" {
     value     = module.vpc.vpc_id
   }
 
-  #so like that i can put all settings that i want it for beanstalk environment
+  #so like that i can put all settings that i want it for beanstalk environments
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "IamInstanceProfile"
