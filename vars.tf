@@ -1,5 +1,5 @@
 variable "AWS_REGION" {
-  default = "ap-south-1a"
+  default = "ap-south-1"
 }
 
 #and based on the region it will create the ami images so
@@ -53,14 +53,14 @@ variable "VPC_NAME" {
 }
 
 #we are going to create 3 subnets for VPCs like in 3 zones we will create the copis
-variable "zone1" {
+variable "Zone1" {
   default = "ap-south-1a"
 }
 
-variable "zone2" {
+variable "Zone2" {
   default = "ap-south-1b"
 }
-variable "zone3" {
+variable "Zone3" {
   default = "ap-south-1c"
 }
 
