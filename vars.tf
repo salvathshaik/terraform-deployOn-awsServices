@@ -35,6 +35,10 @@ variable "rmqpass" {
   default = "terraforminstance@123" #make sure it is longer than 12 chars
 }
 
+variable dbuser {
+  default = "admin"
+}
+
 #will need to create amazon RDS database server so create username and pass for login to RDS and provision with schema of the database username and pass
 variable "dbname" {
   default = "accounts" #database name
