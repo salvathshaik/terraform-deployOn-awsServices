@@ -32,7 +32,7 @@ resource "aws_elastic_beanstalk_environment" "terraform-bean-env-prod" {
   setting { #and above instances wiil be in private subnet but load balancer will be in public subnet
     namespace = "aws:ec2:vpc"
     name      = "ELBSubnets"
-    value     = join(",", [module.vpc.private_subnets[0], module.vpc.private_subnets[1], module.vpc.private_subnets[2]])
+    value     = join(",", [module.vpc.public_subnets[0], module.vpc.public_subnets[1], module.vpc.public_subnets[2]])
   }
 
   setting {

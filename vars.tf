@@ -6,7 +6,9 @@ variable "AWS_REGION" {
 variable "AMIS" {
   type = map(any)
   default = {
-    ap-south-1 = "ami-062df10d14676e201" #take this id from the aws console.for ubuntu 20.04
+    us-east-2 = "ami-0283a57753b18025b" #take this id from the aws console.for ubuntu 20.04
+    us-east-1  = "ami-06397100adf427136"
+    ap-south-1 = "ami-009110a2bf8d7dd0a"
   }
 }
 

@@ -68,16 +68,16 @@ resource "aws_security_group" "terraform-backend-sg" { #error rectified like add
 
   egress { #ouut bound rule
     from_port   = 0
-    protocol    = "-1" #from any protocol like ftp,http or any
     to_port     = 0
+    protocol    = "-1" #from any protocol like ftp,http or any
     cidr_blocks = ["0.0.0.0/0"] #it allows all the outbound traffic anywhere
   }
 
   #beanstalk instance is going to access this backend services
   ingress {
-    from_port       = 22
-    protocol        = "tcp"
-    to_port         = 22
+    from_port       = 0
+    protocol        = "-1"
+    to_port         = 0
     security_groups = [aws_security_group.terraform-prod-sg.id] # only allows the inbound traffic from ec2 beanstalk instance
   }
   ingress {
