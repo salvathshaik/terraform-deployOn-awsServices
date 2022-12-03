@@ -2,7 +2,7 @@ module "vpc" {
   source          = "terraform-aws-modules/vpc/aws" #this module will download at the time of running
   name            = var.VPC_NAME
   cidr            = var.VpcCIDR
-  azs             = [var.Zone1, var.Zone2, var.Zone3]
+  azs             = [var.Zone1, var.Zone2,var.Zone3]
   private_subnets = [var.PriSub1CIDR, var.PriSub2CIDR, var.PriSub3CIDR]
   public_subnets  = [var.PubSub1CIDR, var.PubSub2CIDR, var.PubSub3CIDR]
 

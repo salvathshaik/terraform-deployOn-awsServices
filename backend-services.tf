@@ -26,7 +26,7 @@ resource "aws_db_instance" "terraform-rds" {
   db_name                = var.dbname #name is deprricated so using db_name
   username               = var.dbuser
   password               = var.dbpass
-  parameter_group_name   = "default.mysql5.6"
+  parameter_group_name   = "default.mysql5.7" #changed 5.6 to 5.7
   multi_az               = "false"
   publicly_accessible    = "false"
   skip_final_snapshot    = true #this option will save you some money , when you practice RDS we will end up lots of snapshots so this option will not allow it to do that
@@ -40,7 +40,7 @@ resource "aws_elasticache_cluster" "terraform-elastic-cache" {
   engine               = "memcached"
   node_type            = "cache.t2.micro"
   num_cache_nodes      = 1
-  parameter_group_name = "default.memcached1.4" #you can find this in aws doc, changed the version from 1.5 to 1.4
+  parameter_group_name = "default.memcached1.6" #you can find this in aws doc, changed the version from 1.5 to 1.4 and again changed to 1.6
   port                 = 11211
   security_group_ids   = [aws_security_group.terraform-backend-sg.id] #the same we have given for RDS
   subnet_group_name    = aws_elasticache_subnet_group.terraform-ecache-subgrp.name

@@ -79,12 +79,18 @@ resource "aws_elastic_beanstalk_environment" "terraform-bean-env-prod" {
     value     = "GRAYLOG"
   }
 
+  #this is not worked so changed to below
+  #setting { #settings for health monitoring
+  # namespace = "aws:elasticbeanstalk:healthreporting:environment"
+  #name      = "SystemType"
+  #value     = "enhanced" #you can change it to “basic”
+  #}
+
   setting { #settings for health monitoring
-    namespace = "aws:elasticbeanstalk:healthreporting:environment"
+    namespace = "aws:elasticbeanstalk:healthreporting:system"
     name      = "SystemType"
     value     = "enhanced" #you can change it to “basic”
   }
-
   #autoscale settings as in rolling update stratagy
   setting {
     namespace = "aws:autoscaling:updatepolicy:rollingupdate"

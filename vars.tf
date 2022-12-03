@@ -1,5 +1,5 @@
 variable "AWS_REGION" {
-  default = "ap-south-1"
+  default = "us-east-2"
 }
 
 #and based on the region it will create the ami images so
@@ -58,14 +58,14 @@ variable "VPC_NAME" {
 
 #we are going to create 3 subnets for VPCs like in 3 zones we will create the copis
 variable "Zone1" {
-  default = "ap-south-1a"
+  default = "us-east-2a"
 }
 
 variable "Zone2" {
-  default = "ap-south-1b"
+  default = "us-east-2b"
 }
 variable "Zone3" {
-  default = "ap-south-1c"
+  default = "us-east-2c"
 }
 
 #using this CIDR we will create the subnets as below
